@@ -701,7 +701,8 @@ julien@ubuntu:~/monty$
 `#advanced`
 
 Directory: [bf]()
-File: []()
+
+File: [1000-school.bf]()
 </summary>
 
 Write a Brainf*ck script that prints `School`, followed by a new line.
@@ -722,6 +723,7 @@ julien@ubuntu:~/monty/bf$
 `#advanced`
 
 Directory: [bf]()
+
 File: [1001-add.bf]()
 </summary>
 
@@ -742,6 +744,7 @@ julien@ubuntu:~/monty/bf$ bf ./1001-add.bf
 `#advanced`
 
 Directory: [bf]()
+
 File: [1002-mul.bf]()
 </summary>
 
@@ -762,6 +765,7 @@ julien@ubuntu:~/monty/bf$ bf 1002-mul.bf
 `#advanced`
 
 Directory: [bf]()
+
 File: [1003-mul.bf]()
 </summary>
 
