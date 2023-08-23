@@ -182,163 +182,380 @@ julien@ubuntu:~/monty$
 <details>
 <summary>
 
-### 0. 
+### 0. push, pall
 `mandatory`
 
-File: []()
 </summary>
 
+Implement the `push` and `pall` opcodes.
 
+**The push opcode**
+
+The opcode `push` pushes an element to the stack.
+
+- Usage: `push <int>`
+    - where `<int>` is an integer
+- if `<int>` is not an integer or if there is no argument given to `push`, print the error message `L<line_number>: usage: push integer`, followed by a new line, and exit with the status `EXIT_FAILURE`
+    - where is the line number in the file
+- You won’t have to deal with overflows. Use the `atoi` function
+
+**The pall opcode**
+
+The opcode `pall` prints all the values on the stack, starting from the top of the stack.
+
+- Usage `pall`
+- Format: see example
+- If the stack is empty, don’t print anything
+```bash
+julien@ubuntu:~/monty$ cat -e bytecodes/00.m
+push 1$
+push 2$
+push 3$
+pall$
+julien@ubuntu:~/monty$ ./monty bytecodes/00.m
+3
+2
+1
+julien@ubuntu:~/monty$
+```
 </details>
 
 <details>
 <summary>
 
-### 1. 
+### 1. pint
 `mandatory`
 
-File: []()
 </summary>
 
+Implement the `pint` opcode.
 
+**The pint opcode**
+
+The opcode `pint` prints the value at the top of the stack, followed by a new line.
+- Usage: `pint`
+- If the stack is empty, print the error message `L<line_number>: can't pint, stack empty`, followed by a new line, and exit with the status `EXIT_FAILURE`
+```bash
+julien@ubuntu:~/monty$ cat bytecodes/06.m 
+push 1
+pint
+push 2
+pint
+push 3
+pint
+julien@ubuntu:~/monty$ ./monty bytecodes/06.m 
+1
+2
+3
+julien@ubuntu:~/monty$ 
+```
 </details>
 
 <details>
 <summary>
 
-### 2. 
+### 2. pop
 `mandatory`
 
-File: []()
 </summary>
 
+Implement the `pop` opcode.
 
+**The pop opcode**
+
+The opcode `pop` removes the top element of the stack.
+- Usage: `pop`
+- If the stack is empty, print the error message `L<line_number>: can't pop an empty stack`, followed by a new line, and exit with the status `EXIT_FAILURE`
+```bash
+julien@ubuntu:~/monty$ cat bytecodes/07.m 
+push 1
+push 2
+push 3
+pall
+pop
+pall
+pop
+pall
+pop
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/07.m 
+3
+2
+1
+2
+1
+1
+julien@ubuntu:~/monty$ 
+```
 </details>
 
 <details>
 <summary>
 
-### 3. 
+### 3. swap
 `mandatory`
 
-File: []()
 </summary>
 
+Implement the `swap` opcode.
 
+**The swap opcode**
+
+The opcode `swap` swaps the top two elements of the stack.
+- Usage: `swap`
+- If the stack contains less than two elements, print the error message `L<line_number>: can't swap, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+```bash
+julien@ubuntu:~/monty$ cat bytecodes/09.m 
+push 1
+push 2
+push 3
+pall
+swap
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/09.m 
+3
+2
+1
+2
+3
+1
+julien@ubuntu:~/monty$ 
+```
 </details>
 
 <details>
 <summary>
 
-### 4. 
+### 4. add
 `mandatory`
 
-File: []()
 </summary>
 
+Implement the `add` opcode.
 
+**The add opcode**
+
+The opcode add adds the top two elements of the stack.
+- Usage: `add`
+- If the stack contains less than two elements, print the error message `L<line_number>: can't add, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+- The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+    - The top element of the stack contains the result
+    - The stack is one element shorter
+```bash
+julien@ubuntu:~/monty$ cat bytecodes/12.m 
+push 1
+push 2
+push 3
+pall
+add
+pall
+
+julien@ubuntu:~/monty$ ./monty bytecodes/12.m 
+3
+2
+1
+5
+1
+julien@ubuntu:~/monty$
+```
 </details>
 
 <details>
 <summary>
 
-### 5. 
+### 5. nop
 `mandatory`
 
-File: []()
 </summary>
 
+Implement the `nop` opcode.
 
+**The nop opcode**
+
+The opcode `nop` doesn’t do anything.
+- Usage: `nop`
 </details>
 
 <details>
 <summary>
 
-### 
+### 6. sub
 `#advanced`
 
-File: []()
 </summary>
 
+Implement the `sub` opcode.
 
+**The sub opcode**
+
+The opcode `sub` subtracts the top element of the stack from the second top element of the stack.
+- Usage: `sub`
+- If the stack contains less than two elements, print the error message `L<line_number>: can't sub, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+- The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+    - The top element of the stack contains the result
+    - The stack is one element shorter
+```bash
+julien@ubuntu:~/monty$ cat bytecodes/19.m 
+push 1
+push 2
+push 10
+push 3
+sub
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/19.m 
+7
+2
+1
+julien@ubuntu:~/monty$
+```
 </details>
 
 <details>
 <summary>
 
-### 
+### 7. div
 `#advanced`
 
-File: []()
 </summary>
 
+Implement the `div` opcode.
 
+**The div opcode**
+
+The opcode `div` divides the second top element of the stack by the top element of the stack.
+- Usage: `div`
+- If the stack contains less than two elements, print the error message `L<line_number>: can't div, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+- The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+    - The top element of the stack contains the result
+    - The stack is one element shorter
+- If the top element of the stack is `0`, print the error message `L<line_number>: division by zero`, followed by a new line, and exit with the status `EXIT_FAILURE`
 </details>
 
 <details>
 <summary>
 
-### 
+### 8. mul
 `#advanced`
 
-File: []()
 </summary>
 
+Implement the `mul` opcode.
 
+**The mul opcode**
+
+The opcode `mul` multiplies the second top element of the stack with the top element of the stack.
+- Usage: `mul`
+- If the stack contains less than two elements, print the error message `L<line_number>: can't mul, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+- The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+    - The top element of the stack contains the result
+    - The stack is one element shorter
 </details>
 
 <details>
 <summary>
 
-### 
+### 9. mod
 `#advanced`
 
-File: []()
 </summary>
 
+Implement the `mod` opcode.
 
+**The mod opcode**
+
+The opcode `mod` computes the rest of the division of the second top element of the stack by the top element of the stack.
+- Usage: `mod`
+- If the stack contains less than two elements, print the error message `L<line_number>: can't mod, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+- The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+    - The top element of the stack contains the result
+    - The stack is one element shorter
+- If the top element of the stack is `0`, print the error message `L<line_number>: division by zero`, followed by a new line, and exit with the status `EXIT_FAILURE`
 </details>
 
 <details>
 <summary>
 
-### 
+### 10. comments
 `#advanced`
 
-File: []()
 </summary>
 
-
+Every good language comes with the capability of commenting. When the first non-space character of a line is `#`, treat this line as a comment (don’t do anything).
 </details>
 
 <details>
 <summary>
 
-### 
+### 11. pchar
 `#advanced`
 
-File: []()
 </summary>
 
+Implement the `pchar` opcode.
 
+**The pchar opcode**
+
+The opcode `pchar` prints the char at the top of the stack, followed by a new line.
+- Usage: `pchar`
+- The integer stored at the top of the stack is treated as the ascii value of the character to be printed
+- If the value is not in the ascii table (man ascii) print the error message `L<line_number>: can't pchar, value out of range`, followed by a new line, and exit with the status `EXIT_FAILURE`
+- If the stack is empty, print the error message `L<line_number>: can't pchar, stack empty`, followed by a new line, and exit with the status `EXIT_FAILURE`
+```bash
+julien@ubuntu:~/monty$ cat bytecodes/28.m 
+push 72
+pchar
+julien@ubuntu:~/monty$ ./monty bytecodes/28.m 
+H
+julien@ubuntu:~/monty$
+```
 </details>
 
 <details>
 <summary>
 
-### 
+### 12. pstr
 `#advanced`
 
-File: []()
 </summary>
 
+Implement the `pstr` opcode.
 
+**The pstr opcode**
+
+The opcode `pstr` prints the string starting at the top of the stack, followed by a new line.
+- Usage: `pstr`
+- The integer stored in each element of the stack is treated as the ascii value of the character to be printed
+- The string stops when either:
+    - the stack is over
+    - the value of the element is 0
+    - the value of the element is not in the ascii table
+- If the stack is empty, print only a new line
+```bash
+julien@ubuntu:~/monty$ cat bytecodes/31.m 
+push 1
+push 2
+push 3
+push 4
+push 0
+push 110
+push 0
+push 108
+push 111
+push 111
+push 104
+push 99
+push 83
+pstr
+julien@ubuntu:~/monty$ ./monty bytecodes/31.m 
+School
+julien@ubuntu:~/monty$
+```
 </details>
 
 <details>
 <summary>
 
-### 
+### 13. rotlrt
 `#advanced`
 
 File: []()
