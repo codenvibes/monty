@@ -558,81 +558,220 @@ julien@ubuntu:~/monty$
 ### 13. rotlrt
 `#advanced`
 
-File: []()
 </summary>
 
+Implement the `rotl` opcode.
 
+**The rotl opcode**
+
+The opcode `rotl` rotates the stack to the top.
+- Usage: rotl
+- The top element of the stack becomes the last one, and the second top element of the stack becomes the first one
+- `rotl` never fails
+```bash
+julien@ubuntu:~/monty$ cat bytecodes/35.m 
+push 1
+push 2
+push 3
+push 4
+push 5
+push 6
+push 7
+push 8
+push 9
+push 0
+pall
+rotl
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/35.m 
+0
+9
+8
+7
+6
+5
+4
+3
+2
+1
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+julien@ubuntu:~/monty$ 
+```
 </details>
 
 <details>
 <summary>
 
-### 
+### 14. rotr
 `#advanced`
 
-File: []()
 </summary>
 
+Implement the `rotr` opcode.
 
+**The rotr opcode**
+
+The opcode `rotr` rotates the stack to the bottom.
+- Usage: `rotr`
+- The last element of the stack becomes the top element of the stack
+- `rotr` never fails
 </details>
 
 <details>
 <summary>
 
-### 
+### 15. stack, queue
 `#advanced`
 
-File: []()
 </summary>
 
+Implement the `stack` and `queue` opcodes.
 
+**The stack opcode**
+
+The opcode `stack` sets the format of the data to a stack (LIFO). This is the default behavior of the program.
+
+- Usage: `stack`
+
+**The queue opcode**
+
+The opcode `queue` sets the format of the data to a queue (FIFO).
+
+- Usage: `queue`
+
+When switching mode:
+
+- The top of the stack becomes the front of the queue
+- The front of the queue becomes the top of the stack
+```bash
+julien@ubuntu:~/monty$ cat bytecodes/47.m
+queue
+push 1
+push 2
+push 3
+pall
+stack
+push 4
+push 5
+push 6
+pall
+add
+pall
+queue
+push 11111
+add
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/47.m
+1
+2
+3
+6
+5
+4
+1
+2
+3
+11
+4
+1
+2
+3
+15
+1
+2
+3
+11111
+julien@ubuntu:~/monty$ 
+```
 </details>
 
 <details>
 <summary>
 
-### 
+### 16. Brainf*ck
 `#advanced`
 
+Directory: [bf]()
 File: []()
 </summary>
 
-
+Write a Brainf*ck script that prints `School`, followed by a new line.
+- All your Brainf*ck files should be stored inside the `bf` sub directory
+- You can install the bf interpreter to test your code: `sudo apt-get install bf`
+- Read: [Brainf*ck](https://en.wikipedia.org/wiki/Brainfuck)
+```bash
+julien@ubuntu:~/monty/bf$ bf 1000-school.bf 
+School
+julien@ubuntu:~/monty/bf$ 
+```
 </details>
 
 <details>
 <summary>
 
-### 
+### 17. Add two digits
 `#advanced`
 
-File: []()
+Directory: [bf]()
+File: [1001-add.bf]()
 </summary>
 
-
+Add two digits given by the user.
+- Read the two digits from stdin, add them, and print the result
+- The total of the two digits with be one digit-long (<10)
+```bash
+julien@ubuntu:~/monty/bf$ bf ./1001-add.bf
+81
+9julien@ubuntu:~/monty/bf$
+```
 </details>
 
 <details>
 <summary>
 
-### 
+### 18. Multiplication
 `#advanced`
 
-File: []()
+Directory: [bf]()
+File: [1002-mul.bf]()
 </summary>
 
-
+Multiply two digits given by the user.
+- Read the two digits from stdin, multiply them, and print the result
+- The result of the multiplication will be one digit-long (<10)
+```bash
+julien@ubuntu:~/monty/bf$ bf 1002-mul.bf
+24
+8julien@ubuntu:~/monty/bf$
+```
 </details>
 
 <details>
 <summary>
 
-### 
+### 19. Multiplication level up
 `#advanced`
 
-File: []()
+Directory: [bf]()
+File: [1003-mul.bf]()
 </summary>
 
-
+Multiply two digits given by the user.
+- Read the two digits from stdin, multiply them, and print the result, followed by a new line
+```bash
+julien@ubuntu:~/monty/bf$ bf 1003-mul.bf 
+77
+49
+julien@ubuntu:~/monty/bf$ 
+```
 </details>
 
