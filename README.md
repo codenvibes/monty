@@ -60,6 +60,28 @@ Overall, stacks are a versatile and powerful data structure with applications in
 
 <details>
 <summary><h3>What is a queue, and when to use it</h3></summary>
+
+A queue is a linear data structure that follows the "First-In, First-Out" (FIFO) principle. This means that the element that is added first is the one that will be removed first. Imagine it as a line of people waiting in front of a ticket counter or a cashier; the person who arrives first will be served first.
+
+In a queue, elements are added at the back (also known as the "rear") and removed from the front (also known as the "front"). This ordering ensures that the oldest elements are processed before the newer ones. Queues are commonly used to model scenarios where tasks, jobs, or data must be processed in a specific order.
+
+When to use a queue:
+
+1. **Task Scheduling:** If you have tasks or jobs that need to be processed in a specific order, a queue is a suitable choice. For example, in a print spooler, print jobs are queued up and processed in the order they were received.
+
+2. **Breadth-First Search (BFS):** In graph algorithms, like BFS traversal, a queue is used to keep track of the nodes that need to be explored. This ensures that nodes at the same level are visited before moving to the next level.
+
+3. **Resource Sharing:** When multiple processes or threads are competing for a shared resource, a queue can be used to manage access. The resource is granted to the process that has been waiting the longest, preventing any single process from dominating.
+
+4. **Buffering:** In scenarios where data needs to be temporarily held before being processed or transmitted, a queue can be used as a buffer. For instance, data packets in networking are often placed in a queue before being sent.
+
+5. **Print Queue:** In printing systems, jobs are often added to a print queue in the order they are received, ensuring that documents are printed in the order they were requested.
+
+6. **Task Management:** In operating systems, queues are used to manage tasks and processes. Processes waiting to be executed are placed in a queue and are given CPU time in a fair order.
+
+7. **Background Processing:** Queues can be used to manage background processing or asynchronous tasks. Requests are placed in a queue and processed in the order they were received.
+
+Overall, queues are useful in situations where maintaining a specific order of processing is important. They help ensure fairness, manage resource allocation, and organize tasks in a structured manner. Queues can be implemented using arrays or linked lists, and there are various variations and implementations available, such as priority queues that prioritize elements based on certain criteria.
 </details>
 
 <details>
