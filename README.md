@@ -2,7 +2,7 @@
 `C` `Group project` `Algorithm` `Data structure`
 
 # Resources
-- [Google]()
+- [Google](https://www.google.com/webhp?q=stack%20and%20queue)
 - [How do I use extern to share variables between source files in C?](https://stackoverflow.com/questions/1433204/how-do-i-use-extern-to-share-variables-between-source-files)
 - [Stacks and Queues in C](https://data-flair.training/blogs/stacks-and-queues-in-c/)
 - [Stack operations](https://www.digitalocean.com/community/tutorials/stack-in-c)
@@ -14,6 +14,18 @@
 # Learning Objectives
 <details>
 <summary><h3>What do LIFO and FIFO mean</h3></summary>
+
+In C, LIFO and FIFO are terms often used in the context of data structures, particularly stacks and queues, to describe the order in which elements are accessed or removed from the data structure.
+
+1. LIFO: LIFO stands for "Last-In, First-Out." It refers to a data structure where the last element added to the structure is the first one to be removed. Think of it like a stack of plates where you add plates to the top and remove them from the top. The most recently added item is the one that gets removed next.
+
+   In C, you can implement a LIFO data structure using arrays or linked lists. The main operations associated with a LIFO structure are "push" (to add an element) and "pop" (to remove the top element).
+
+2. FIFO: FIFO stands for "First-In, First-Out." It refers to a data structure where the first element added to the structure is the first one to be removed. This is similar to a queue of people waiting in line, where the person who joined the line first is the one who gets served first.
+
+   In C, you can implement a FIFO data structure using arrays or linked lists as well. The main operations associated with a FIFO structure are "enqueue" (to add an element) and "dequeue" (to remove the front element).
+
+These concepts are fundamental in computer science and programming, and they are used in various applications to manage data in a specific order depending on the use case. Stacks and queues are often used as building blocks for more complex algorithms and data structures.
 </details>
 
 <details>
