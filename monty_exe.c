@@ -2,7 +2,7 @@
 #include <string.h>
 
 /*
- * File: run_monty.c
+ * File: monty_exe.c
  * Auth: Terrence M.K
  */
 
