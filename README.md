@@ -30,6 +30,32 @@ These concepts are fundamental in computer science and programming, and they are
 
 <details>
 <summary><h3>What is a stack, and when to use it</h3></summary>
+
+A stack is a linear data structure in computer science that follows the Last-In, First-Out (LIFO) principle. This means that the last element added to the stack is the first one to be removed. It's similar to stacking plates on top of each other, where you can only remove the top plate.
+
+A stack has two primary operations:
+
+1. **Push:** This operation adds an element to the top of the stack.
+
+2. **Pop:** This operation removes the top element from the stack.
+
+Additionally, there is often an operation called "peek" that allows you to view the top element without removing it.
+
+Stacks are particularly useful in situations where you need to keep track of a collection of elements with a specific order and where you're interested in managing elements in a last-in, first-out manner. Here are some common scenarios where stacks are used:
+
+1. **Function Call Stack:** In programming languages, a call stack is used to keep track of function calls. Each time a function is called, its context is pushed onto the stack. When the function completes, its context is popped from the stack, allowing the program to resume at the point where the function was called.
+
+2. **Expression Evaluation:** Stacks are used in evaluating expressions, especially arithmetic expressions. Operators and operands are pushed onto the stack, and when an operator is encountered, the necessary operands are popped, the operation is performed, and the result is pushed back onto the stack.
+
+3. **Undo/Redo Operations:** Stacks are commonly used in applications that support undo and redo functionalities. Each action is pushed onto the undo stack, and redo operations can be performed by popping from the undo stack and pushing onto a redo stack.
+
+4. **Parsing and Syntax Checking:** Stacks are used in parsing and syntax checking of programming languages. They help keep track of open and closing parentheses, brackets, and braces, ensuring the code has balanced and correct syntax.
+
+5. **Backtracking Algorithms:** Certain algorithms, like depth-first search in graph traversal, can utilize stacks to keep track of the exploration path and backtrack when needed.
+
+6. **Reversing Data:** If you need to reverse the order of elements, a stack can be used to achieve this efficiently.
+
+Overall, stacks are a versatile and powerful data structure with applications in various areas of computer science and programming whenever you need to manage data in a last-in, first-out manner.
 </details>
 
 <details>
