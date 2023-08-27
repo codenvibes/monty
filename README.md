@@ -241,7 +241,8 @@ typedef struct instruction_s
 <details>
 <summary><h3>Compilation & Output</h3></summary>
 
-- Your code will be compiled this way:<br>
+- Your code will be compiled this way:
+<br>
    ```bash
    $ gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty
    ```
