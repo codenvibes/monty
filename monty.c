@@ -4,7 +4,7 @@
 #include <fcntl.h>
 
 /*
- * File: monty_main.c
+ * File: monty.c
  * Auth: Terrence M.K
  */
 
